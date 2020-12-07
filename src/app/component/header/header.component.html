@@ -1,0 +1,53 @@
+<header class="site-navbar py-4" role="banner">
+  <div class="container">
+    <div class="d-flex align-items-center">
+      <div class="site-logo">
+        <a routerLink="index.html">
+          <img src="assets/images/logo.png" alt="Logo">
+        </a>
+      </div>
+      <div class="ml-auto">
+        <nav class="site-navigation position-relative text-right" role="navigation">
+          <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+            <!-- {{firstName |lowercase}} -->
+          <li><a  class="nav-link">{{actualDate | date:'yyyy-MM-dd HH:mm'  }}  </a></li>
+            <li><a *ngIf='firstName' class="nav-link">Bonjour Mr {{firstName}} {{lastName}}</a></li>
+            <li [routerLinkActive]="['active']"><a routerLink="" class="nav-link">Home</a></li>
+            <li [routerLinkActive]="['active']"><a routerLink="contact" class="nav-link">Contact</a></li>
+            <li [routerLinkActive]="['active']"><a *ngIf='firstName' routerLink="admin" class="nav-link">admin</a></li>
+            <li [routerLinkActive]="['active']"><a *ngIf="!firstName" routerLink="login" class="nav-link">login</a></li>
+            <li [routerLinkActive]="['active']"><a *ngIf="!firstName" routerLink="signup" class="nav-link">signup</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a *ngIf='firstName' class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a *ngIf='firstName' routerLink="matches" class="nav-link"  class="dropdown-item">Matches</a>
+              <a *ngIf='firstName' routerLink="players" class="nav-link" class="dropdown-item">Players</a>
+               
+                <div class="dropdown-divider"></div>
+               <a *ngIf='firstName' routerLink="add-match" class="dropdown-item" class="nav-link">Add
+                  Match</a>
+                 <a *ngIf='firstName' routerLink="add-stadium"class="dropdown-item"  class="nav-link">Add
+                    stadium</a>
+              <a *ngIf='firstName' routerLink="add-player" class="dropdown-item"class="nav-link">Add
+                  Player</a>
+                
+              </div>
+            </li>
+          
+            <li [routerLinkActive]="['active']"> 
+              <a *ngIf='firstName' (click)='logout()' class="nav-link">Logout</a></li>
+
+          </ul>
+        </nav>
+
+        <a routerLink="#"
+          class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right text-white"><span
+            class="icon-menu h3 text-white"></span></a>
+      </div>
+    </div>
+  </div>
+
+</header>

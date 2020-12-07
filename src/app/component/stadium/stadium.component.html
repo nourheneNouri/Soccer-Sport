@@ -1,0 +1,20 @@
+<table class="table table-dark">
+    <tr>
+        <td>Id</td>
+        <td>name</td>
+        <td>capacity</td>
+        <td> country</td>
+
+    </tr>
+    <tr>
+        <td> {{s._id}} </td>
+        <td> {{s.name}} </td>
+        <td> {{s.capacity}} </td>
+        <td> {{s.country}} </td>
+
+    
+        <td> <button (click)='display(s._id)' class="btn btn-success"> Display</button> </td>
+        <td> <button  (click)='edit(s._id)' class="btn btn-info" > edit </button> </td> 
+        <td> <button (click)='deleteStadium(s._id)' class="btn btn-danger">Delete</button> </td>
+    </tr>
+</table>

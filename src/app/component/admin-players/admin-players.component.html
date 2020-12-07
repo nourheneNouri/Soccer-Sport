@@ -1,0 +1,19 @@
+<table class="table table-dark">
+    <tr>
+      <td>Id</td>
+      <td>Nom</td>
+      <td>date</td>
+      <td>image</td>
+    </tr>
+  <tr *ngFor='let p of allPlayers'>
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.date}}</td>
+      <td> <img [src] ="p.image" style= "height: 50px ; width: 50px;"/> </td>
+   
+      <td> <button class="btn btn-info" (click)='edit(p._id)'> edit </button> </td>  
+      <td> <button class="btn btn-danger" (click)='delete(p._id)'> delete </button> </td>
+      <td> <button class="btn btn-success" (click)='display(p._id)'> Display </button> </td> 
+
+  </tr>
+</table>
